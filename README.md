@@ -9,5 +9,5 @@ All examples can be found in the `asm` directory.
 
 ---
 
-![alt text](resources/images/github-cover.png)
+![alt text](resources/images/vscode-window.png)
 

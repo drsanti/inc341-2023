@@ -1,56 +1,62 @@
+li a0, 0x100			# Set pixel
+li a1, 0x00000000		# x:<31:16>, y:<15:0>
+li a2, 0x00FFFF00		# r: <23:16>, g: <15:8>, b: <7:0>
+ecall					# Environment call
 
-# 1) GitHub
-# 2) Load an immediate (constant) value into a register
-# 3) Register-to-register data transfer
-# 4) Registers
-# 5) Alias Registers
-
-
-
-
-# Load an immediate (constant) value into a register.
-#|--------------------------|
-#| li rd, immediate			|
-#|--------------------------|
-# li:			Load an immediate
-# rd: 			Destination register where the immediate value will be loaded.
-# immediate: 	Immediate (constant) value to be loaded into the register.
-# 				It can be a signed or unsigned 32-bit integer value.
+li a0, 0x101			# Set all pexels
+li a1, 0x0000FFFF		# r: <23:16>, g: <15:8>, b: <7:0>
+ecall
 
 
-# Register-to-register data transfer
-#|--------------------------|
-#| mv rd, rs				|
-#|--------------------------|
-# mv: Move
-# rd: Destination register where the value from register rs will be copied.
-# rs: Source register from which the value will be copied to rd.
+li a0, 0x110			# Set LED row
+li a1, 0x000B			# Row <11:0>, 0 is bottom row
+li a2, 0x000F			# Col <15:0>, 0 is rightmost LED
+ecall
 
 
-# Registers
-#|----------|-------------------------------------------|
-#|	PC 		|	Program Counter							|
-#|	PRIV 	|	Privilege Levels						|
-#|	      	|	 00: User/Application (U)				|	U: User
-#|	      	|	 01: User/Application (S)				|	S: Supervisor
-#|	      	|	 10: -									|	M: Machine
-#|	      	|	 11: User/Application (M)				|
-#|	CSR 	|	Control and Status Registers			|
-#|	Integer	|	Standard RISC-V registers x00-x31		|
-#|	Float	|	Floating-pointregisters f00-f31 		|
-#|----------|-------------------------------------------|
+li a0, 0x120			# Set seven segment display
+li a1, 0x7700			# Display code (A)
+li a2, 0xFF00			# Segment mask
+ecall
 
 
-# Alias Registers (or Register Aliases)
-#|----------|-------------------------------------------|
-#|	zero 	|	Hard-wired zero							|
-#|	ra 		|	Return address							|
-#|	sp 		|	Stack pointer							|
-#|	gp 		|	Global pointer							|
-#|	tp 		|	Thread pointer							|
-#|	t0..6 	|	Temporaries								|
-#|	s0..11 	|	Saved register							|
-#|	a0..7 	|	Function arguments/return values		|
-#|----------|-------------------------------------------|
+li a0, 0x121			# Set LEDs
+li a1, 0x01				# Green LED
+ecall
+li a1, 0x02				# Red LED
+ecall
+li a1, 0x03				# Green and Red LEDs
+ecall
 
+
+loop:
+	li a0, 0x122		# Read push buttons
+	ecall
+	mv a1, a0			# LED Data
+	li a0, 0x121		# Set LEDs
+	ecall
+	j loop
+
+
+readInput:
+	li a0, 0x130
+	ecall
+
+# readBuffer:
+# 	li a1, 0
+# 	li a0 0x131
+# 	ecall
+# 	# a0 == 0: All input has been read (Buffer is emplty)
+# 	# a0 == 1: Still waiting for input
+# 	# a0 == 2: Input has been detected and one character has been read. a1 == input
+# 	# a1 == input
+
+# 	beqz a1, readInput # if no input was detected a1 is 0
+
+# 	li a0, 34	# Print integer
+# 	ecall
+# 	li a0, 0x0B	# Print string
+# 	li a1, 0x0A # \r
+# 	ecall
+# 	j readBuffer
 

@@ -1,0 +1,57 @@
+{
+	"workbench.colorTheme": "Bluloco Dark",
+	"workbench.colorCustomizations": {
+		//"[GitHub Dark Dimmed]": {
+		"activityBar.background": "#282828", // left side bar
+		"sideBar.background": "#141414", // file exploer background
+		"editor.background": "#111",
+		"tab.activeBackground": "#111", // selected file tab
+		"panel.background": "#111", // console window
+		"tab.hoverBackground": "#121",
+		"list.hoverBackground": "#222",
+		// sidebar (collapsable tabs)
+		"sideBarSectionHeader.background": "#111",
+		"sideBarSectionHeader.foreground": "#555",
+		// statusbar (bottom info)
+		"statusBar.background": "#010102",
+		// scrollbar
+		"scrollbarSlider.activeBackground": "#0b69dd",
+		"scrollbarSlider.hoverBackground": "#034aa0",
+		// badge
+		"badge.background": "#034aa0",
+		//
+		// inlay
+		"editorInlayHint.background": "#00000000",
+		"editorInlayHint.parameterBackground": "#00000000",
+		"editorInlayHint.typeBackground": "#00000000",
+		"editorInlayHint.foreground": "#706857bf",
+		"editorInlayHint.parameterForeground": "#546555c6",
+	},
+	"editor.tokenColorCustomizations": {
+		"comments": "#0091ff",
+		"keywords": "#cff075",
+		"numbers": "#c4674d",
+		//"functions": "#0D7C28"
+		"strings": "#83ce5d",
+		// "types": "#FF0000"
+		"variables": "#c3c3c3",
+	},
+	// editor
+	"editor.fontSize": 17,
+	"editor.lineHeight": 25,
+	"editor.letterSpacing": 0.7,
+	"editor.fontWeight": "400",
+	"editor.renderWhitespace": "selection",
+	"editor.cursorStyle": "line",
+	"editor.cursorWidth": 4,
+	"editor.cursorBlinking": "blink",
+	"editor.cursorSmoothCaretAnimation": "on",
+	//
+	"files.trimTrailingWhitespace": true,
+	//
+	"prettier.eslintIntegration": true,
+	"cSpell.words": [],
+	//
+	"terminal.integrated.fontSize": 18,
+	"riscv-venus.variableFormat": "hex"
+}

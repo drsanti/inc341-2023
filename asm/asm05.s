@@ -1,7 +1,31 @@
+li a0, 0x1234ABCD   # Load immediate value 0x1234ABCD into register a0
+mv a1, a0           # Move the value from register a0 to a1
+nop                	# No operation (do nothing)
 
-# Standard Instructions vs.Pseudo-Instructions
 
-# Pseudo-Instruction
+
+
+###################################################
+## Pseudo Instructions vs. Standard Instructions ##
+###################################################
+
+
+
+# Pseudo Instructions:
+#  - Pseudo-instructions, also known as pseudo-ops or pseudo-operations, are not part of the official RISC-V ISA specification. Instead, they are a feature provided by some RISC-V assemblers and toolchains to simplify programming or improve code readability.
+#  - Pseudo-instructions do not have a one-to-one correspondence with hardware instructions in the processor's instruction set. Instead, they are typically translated into one or more standard instructions by the assembler during the assembly process.
+#  - Pseudo-instructions are not guaranteed to be supported by all RISC-V toolchains or processors. Their availability and behavior may vary between different RISC-V development environments.
+#  - Pseudo-instructions can be useful for simplifying code, making it more readable, or optimizing specific sequences of standard instructions.
+
+
+# Standard Instructions:
+#  - Standard instructions in RISC-V are part of the official ISA specification and are supported by all compliant RISC-V processors.
+#  - These instructions are the fundamental building blocks of RISC-V assembly language programming and provide essential operations such as arithmetic, logic, data movement, and control flow.
+#  - Standard instructions are designed to be efficiently implemented in hardware, and they have predictable execution times.
+
+
+
+# Examples of Pseudo Instructions
 #|---------------------|------------------------------------------|----------------------|
 #|  Pseudo-Instruction | Description                              | Example Usage        |
 #|---------------------|------------------------------------------|----------------------|
@@ -23,5 +47,3 @@
 # while pseudo-instructions are higher-level abstractions provided by the assembler or compiler
 # to simplify programming but are translated into standard instructions during the assembly or
 # compilation process.
-
-

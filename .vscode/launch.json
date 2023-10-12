@@ -9,12 +9,8 @@
 			"stopOnEntry": true,
 			"stopAtBreakpoints": true,
 			"openViews": [
-				"LED Matrix",
-			],
-			"ledMatrixSize": {
-				"x": 1,
-				"y": 1
-			}
+				"Assembly"
+			]
 		}
 	]
 }

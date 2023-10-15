@@ -1,16 +1,35 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"type": "venus",
-			"request": "launch",
-			"name": "Launch with all views",
-			"program": "${file}",
-			"stopOnEntry": true,
-			"stopAtBreakpoints": true,
-			"openViews": [
-				"Assembly"
-			]
-		}
-	]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "venus",
+      "request": "launch",
+      "name": "Launch with all views",
+      "program": "${file}",
+      "stopOnEntry": true,
+      "stopAtBreakpoints": true,
+      "openViews": [
+        "Assembly"
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/risc-v-asm/resources",
+      "program": "d:/risc-v-asm/resources/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
 }

@@ -1,3 +1,10 @@
+int main(void)
+{
+	printf("Hello, World!\n");
+
+	return 0;
+}
+
 int plus3(int x)
 {
 	int r = x + 3;

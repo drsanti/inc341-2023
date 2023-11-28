@@ -1,11 +1,14 @@
-li a0, 0x100			# Set pixel
-li a1, 0x00000000		# x:<31:16>, y:<15:0>
-li a2, 0x00FFFF00		# r: <23:16>, g: <15:8>, b: <7:0>
-ecall					# Environment call
+
+
 
 li a0, 0x101			# Set all pexels
-li a1, 0x0000FFFF		# r: <23:16>, g: <15:8>, b: <7:0>
+li a1, 0x00FFFF00		# r: <23:16>, g: <15:8>, b: <7:0>
 ecall
+
+li a0, 0x100			# Set pixel
+li a1, 0x00000004		# x:<31:16>, y:<15:0>
+li a2, 0x00FFffFF		# r: <23:16>, g: <15:8>, b: <7:0>
+ecall					# Environment call
 
 
 li a0, 0x110			# Set LED row
